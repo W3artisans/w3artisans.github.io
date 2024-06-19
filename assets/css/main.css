@@ -1,19 +1,9 @@
-/**
-* Template Name: Flexor
-* Template URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
-* Updated: Jun 14 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
+  --default-font: "Poppins", sans-serif;
+  --heading-font: "Poppins", sans-serif;
   --nav-font: "Inter",  sans-serif;
 }
 
@@ -24,20 +14,23 @@
   --heading-color: #473d3a; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ff5821; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --contrast-color: #ffffff; /* The contrast color is used for elements when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors */
+  --secondary-color: #049a8f; /* Secondary color used for elements that are less prominent than the accent color */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ff5821; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #0a94b0; /* Applied to main navmenu links when they are hovered over or active */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ff5821; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #0a94b0; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+
 }
 
 /* Template Custom Colors */
 :root {
-  --alt-background-color: #1d1918;
+  --alt-background-color: #0a94b0;
+  --alt-background-color-black: #1d1918;
 }
 
 /* Smooth scroll */
@@ -55,13 +48,13 @@ body {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, var(--alt-background-color), transparent 25%);
   text-decoration: none;
 }
 
@@ -95,7 +88,7 @@ h6 {
 
 .header .topbar .contact-info i {
   font-style: normal;
-  color: var(--accent-color);
+  color:#087897;
 }
 
 .header .topbar .contact-info i a,
@@ -123,7 +116,7 @@ h6 {
 }
 
 .header .topbar .social-links a {
-  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+  color:#087897;
   line-height: 0;
   transition: 0.3s;
   margin-left: 20px;
@@ -324,12 +317,16 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    background-color: color-mix(in srgb, var(--alt-background-color), transparent 90%);
   }
-
+  .navmenu i::before{
+    border: 0px;
+    border-radius: 0;
+    color: var(--alt-background-color);
+  }
   .navmenu a i:hover,
   .navmenu a:focus i:hover {
-    background-color: var(--accent-color);
+    background-color: var(--alt-background-color);
     color: var(--contrast-color);
   }
 
@@ -341,7 +338,7 @@ h6 {
 
   .navmenu .active i,
   .navmenu .active:focus i {
-    background-color: var(--accent-color);
+    background-color: var(--alt-background-color);
     color: var(--contrast-color);
     transform: rotate(180deg);
   }
@@ -398,7 +395,7 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  --background-color: color-mix(in srgb, var(--alt-background-color), transparent 97%);
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
@@ -416,7 +413,7 @@ h6 {
 }
 
 .footer .footer-about .logo img {
-  max-height: 40px;
+  max-height: 65px;
   margin-right: 6px;
 }
 
@@ -448,8 +445,8 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: var(--alt-background-color);
+  border-color: var(--alt-background-color);
 }
 
 .footer h4 {
@@ -492,7 +489,7 @@ h6 {
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .footer .footer-contact p {
@@ -511,7 +508,7 @@ h6 {
 }
 
 .footer .footer-newsletter .newsletter-form:focus-within {
-  border-color: var(--accent-color);
+  border-color: var(--alt-background-color);
 }
 
 .footer .footer-newsletter .newsletter-form input[type=email] {
@@ -531,14 +528,14 @@ h6 {
   font-size: 16px;
   padding: 0 20px;
   margin: -8px -9px -8px 0;
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   color: var(--contrast-color);
   transition: 0.3s;
   border-radius: 50px;
 }
 
 .footer .footer-newsletter .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: color-mix(in srgb, var(--alt-background-color), transparent 20%);
 }
 
 .footer .footer-newsletter .error-message {
@@ -578,7 +575,7 @@ h6 {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
+  border: 3px solid var(--alt-background-color);
   border-top-color: var(--background-color);
   animation: subscription-loading 1s linear infinite;
 }
@@ -626,7 +623,7 @@ h6 {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-color: var(--alt-background-color) transparent var(--alt-background-color) transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -653,7 +650,7 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -664,10 +661,15 @@ h6 {
   font-size: 24px;
   color: var(--contrast-color);
   line-height: 0;
+  color: #fff;
+}
+.scroll-top i::before{
+  background-color: var(--alt-background-color);
+
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--alt-background-color), transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -787,7 +789,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--alt-background-color), transparent 50%);
+  background: color-mix(in srgb, var(--alt-background-color-black), transparent 50%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -816,7 +818,7 @@ section,
 
 .hero .content .why-box {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   padding: 30px;
   border-radius: 4px;
 }
@@ -847,7 +849,7 @@ section,
 
 .hero .content .why-box .more-btn:hover {
   background: var(--contrast-color);
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .hero .content .icon-box {
@@ -861,7 +863,7 @@ section,
 
 .hero .content .icon-box i {
   font-size: 40px;
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .hero .content .icon-box h4 {
@@ -875,11 +877,20 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
+.bi::before{
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 1px 1px 1px #3333;
+}
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
 .about {
-  --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  /* background-image: radial-gradient( circle at 20% 100%, rgba(184, 184, 184, 0.1) 0%, rgba(184, 184, 184, 0.1) 33%, rgba(96, 96, 96, 0.1) 33%, rgba(96, 96, 96, 0.1) 66%, rgba(7, 7, 7, 0.1) 66%, rgba(7, 7, 7, 0.1) 99% ), linear-gradient(40deg, #ffffff, #ffffff, #ffffff, #ffffff);
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 .about .content h3 {
@@ -901,7 +912,7 @@ section,
 .about .content ul i {
   flex-shrink: 0;
   font-size: 48px;
-  color: var(--accent-color);
+  color: var(--alt-background-color);
   margin-right: 20px;
   line-height: 0;
 }
@@ -922,7 +933,7 @@ section,
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(var(--alt-background-color) 50%, color-mix(in srgb, var(--alt-background-color), transparent 75%) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -943,7 +954,7 @@ section,
   animation-timing-function: steps;
   opacity: 1;
   border-radius: 50%;
-  border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+  border: 5px solid color-mix(in srgb, var(--alt-background-color), transparent 30%);
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);
@@ -982,9 +993,10 @@ section,
 }
 
 .about .play-btn:hover:after {
-  border-left: 15px solid var(--accent-color);
+  border-left: 15px solid var(--alt-background-color);
   transform: scale(20);
 }
+
 
 @keyframes pulsate-btn {
   0% {
@@ -997,6 +1009,17 @@ section,
     opacity: 0;
   }
 }
+
+.about  ul  li i::before{
+   border:0;
+    border-radius: 50%;
+    padding: 10px;
+    background: var(--secondary-color);
+    box-shadow: 1px 1px 1px #fff;
+    font-size: 30px;
+    color: #fff;
+}
+
 
 /*--------------------------------------------------------------
 # Clients Section
@@ -1029,14 +1052,14 @@ section,
 }
 
 .clients .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
 }
 
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services {
-  --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  --background-color: color-mix(in srgb, var(--alt-background-color), transparent 97%);
 }
 
 .services .service-item {
@@ -1047,10 +1070,14 @@ section,
   position: relative;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   text-align: center;
+  height: 100%;
+  max-height: 500px;
+  font-family: 'Poppins';
+  cursor: pointer;
 }
 
 .services .service-item .icon {
-  background: var(--accent-color);
+  background: var(--secondary-color);
   color: var(--contrast-color);
   margin: 0;
   width: 72px;
@@ -1067,7 +1094,14 @@ section,
   left: calc(50% - 36px);
   border: 6px solid var(--background-color);
 }
-
+.services .service-item .icon i::before {
+  border: 0;
+  border-radius: 50%;
+  padding: 5px;
+  background: none;
+  color: #fff;
+  box-shadow:none;
+}
 .services .service-item h3 {
   font-weight: 700;
   margin: 10px 0 15px 0;
@@ -1077,21 +1111,61 @@ section,
 
 .services .service-item p {
   line-height: 24px;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 0;
+  max-height: 210px;
+  overflow: hidden;
+  transition: ease-in-out 0.3s;
+  font-family: 'Poppins';
+  
+}
+.services .service-item button {
+  width: 60%;
+  /* text-align: left; */
+  padding-right: 25%;
+  background-color: var(--alt-background-color);
+  border: 0;
+  height: 3rem;
+  margin-top: 3rem!important;
+  cursor: pointer;
+}
+.services .service-item button::after{
+  position: absolute;
+  content: "\00a0 More \25BC";
+  cursor: pointer;
+  
+}
+.services .readmore button::after{
+  position: absolute;
+  content: "\00a0 Less \25B2";
+  cursor: pointer;
+  
+}
+
+.services .readmore{
+  max-height: none;
+}
+.services .readmore p {
+  
+  max-height: 100%;
+  overflow: visible;
+  transition: ease-in-out 0.3s;
+
+  
 }
 
 .services .service-item:hover h3 {
-  color: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 .services .service-item:hover .icon {
-  background: var(--contrast-color);
-  border: 2px solid var(--accent-color);
+  background: #fff;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
 }
 
-.services .service-item:hover .icon i {
-  color: var(--accent-color);
+.services .service-item:hover .icon i::before {
+  color: var(--secondary-color);
 }
 
 /*--------------------------------------------------------------
@@ -1134,7 +1208,7 @@ section,
 }
 
 .alt-services .service-item:hover .details h3 {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .alt-services .service-item:hover .img img {
@@ -1183,7 +1257,9 @@ section,
 .testimonials .testimonial-item {
   text-align: center;
 }
-
+.testimonials .testimonial-item i::before{
+  color: var(--alt-background-color);
+}
 .testimonials .testimonial-item .testimonial-img {
   width: 100px;
   border-radius: 50%;
@@ -1211,7 +1287,12 @@ section,
   color: #ffc107;
   margin: 0 1px;
 }
-
+.testimonials .testimonial-item .stars i::before{
+  color: #ffc107;
+  background-color: none;
+  border: 0;
+  border-radius: 0;
+}
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
@@ -1292,7 +1373,7 @@ section,
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
   color: var(--contrast-color);
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
 }
 
 .portfolio .portfolio-filters li:first-child {
@@ -1353,7 +1434,7 @@ section,
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -1370,7 +1451,7 @@ section,
 # Team Section
 --------------------------------------------------------------*/
 .team {
-  --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  --background-color: color-mix(in srgb, var(--alt-background-color), transparent 97%);
 }
 
 .team .team-member {
@@ -1413,7 +1494,7 @@ section,
 }
 
 .team .team-member .social a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .team .team-member .social i {
@@ -1504,7 +1585,7 @@ section,
 }
 
 .pricing .pricing-item ul i {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
   font-size: 18px;
   padding-right: 4px;
 }
@@ -1522,7 +1603,7 @@ section,
 }
 
 .pricing .btn-buy {
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   color: var(--contrast-color);
   display: inline-block;
   padding: 8px 35px 10px 35px;
@@ -1536,16 +1617,16 @@ section,
 }
 
 .pricing .btn-buy:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: color-mix(in srgb, var(--alt-background-color), transparent 20%);
 }
 
 .pricing .featured h3 {
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   color: var(--contrast-color);
 }
 
 .pricing .advanced {
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   color: var(--contrast-color);
   width: 200px;
   position: absolute;
@@ -1561,7 +1642,7 @@ section,
 # Faq Section
 --------------------------------------------------------------*/
 .faq {
-  --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  --background-color: color-mix(in srgb, var(--alt-background-color), transparent 97%);
 }
 
 .faq .faq-container {
@@ -1591,12 +1672,12 @@ section,
 }
 
 .faq .faq-container .faq-item h3 span {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
   padding-right: 5px;
 }
 
 .faq .faq-container .faq-item h3:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .faq .faq-container .faq-item .faq-content {
@@ -1614,14 +1695,19 @@ section,
 
 .faq .faq-container .faq-item .faq-icon {
   position: absolute;
-  top: 22px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
   font-size: 20px;
   line-height: 0;
   transition: 0.3s;
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
-
+.faq .faq-container .faq-item .faq-icon i::before{
+  color: var(--alt-background-color);
+}
+.faq .faq-container .faq-active i::before{
+  color: var(--alt-background-color);
+}
 .faq .faq-container .faq-item .faq-toggle {
   position: absolute;
   top: 20px;
@@ -1633,11 +1719,11 @@ section,
 }
 
 .faq .faq-container .faq-item .faq-toggle:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .faq .faq-container .faq-active {
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
   transition: 0.3s;
 }
 
@@ -1670,7 +1756,7 @@ section,
 
 .contact .info-item .icon {
   color: var(--contrast-color);
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
   font-size: 20px;
   width: 56px;
   height: 56px;
@@ -1695,7 +1781,9 @@ section,
   margin-bottom: 0;
   font-size: 14px;
 }
-
+.contact .info-item i::before{
+  color: var(--alt-background-color);
+}
 .contact .info-item .social-links a {
   font-size: 24px;
   display: inline-block;
@@ -1706,7 +1794,7 @@ section,
 }
 
 .contact .info-item .social-links a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .contact .php-email-form {
@@ -1756,7 +1844,7 @@ section,
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
+  border: 3px solid var(--alt-background-color);
   border-top-color: var(--background-color);
   animation: animate-loading 1s linear infinite;
 }
@@ -1776,7 +1864,7 @@ section,
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
+  border-color: var(--alt-background-color);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
@@ -1787,7 +1875,7 @@ section,
 
 .contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
@@ -1795,7 +1883,7 @@ section,
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: color-mix(in srgb, var(--alt-background-color), transparent 20%);
 }
 
 @keyframes animate-loading {
@@ -1828,7 +1916,7 @@ section,
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
 }
 
 .portfolio-details .portfolio-info {
@@ -1891,11 +1979,11 @@ section,
 .service-details .services-list a.active {
   color: var(--heading-color);
   font-weight: 700;
-  border-color: var(--accent-color);
+  border-color: var(--alt-background-color);
 }
 
 .service-details .services-list a:hover {
-  border-color: var(--accent-color);
+  border-color: var(--alt-background-color);
 }
 
 .service-details .services-img {
@@ -1931,7 +2019,7 @@ section,
 .service-details ul i {
   font-size: 20px;
   margin-right: 8px;
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 /*--------------------------------------------------------------
@@ -1977,7 +2065,7 @@ section,
 }
 
 .blog-posts .title a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .blog-posts .post-author-img {
@@ -2018,19 +2106,19 @@ section,
 }
 
 .blog-pagination li a {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--alt-background-color);
 }
 
 .blog-pagination li a.active,
 .blog-pagination li a:hover {
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   color: var(--contrast-color);
 }
 
@@ -2099,7 +2187,7 @@ section,
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -2152,7 +2240,7 @@ section,
 }
 
 .blog-details .meta-bottom a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .blog-details .meta-bottom .cats {
@@ -2267,7 +2355,7 @@ section,
 }
 
 .blog-comments .comment h5 a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .blog-comments .comment h5 .reply {
@@ -2323,7 +2411,7 @@ section,
 
 .comment-form form input:focus {
   box-shadow: none;
-  border-color: var(--accent-color);
+  border-color: var(--alt-background-color);
 }
 
 .comment-form form textarea {
@@ -2338,7 +2426,7 @@ section,
 
 .comment-form form textarea:focus {
   box-shadow: none;
-  border-color: var(--accent-color);
+  border-color: var(--alt-background-color);
 }
 
 .comment-form form .form-group {
@@ -2349,13 +2437,13 @@ section,
   border-radius: 4px;
   padding: 10px 20px;
   border: 0;
-  background-color: var(--accent-color);
+  background-color: var(--alt-background-color);
   color: var(--contrast-color);
 }
 
 .comment-form form .btn-primary:hover {
   color: var(--contrast-color);
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--alt-background-color), transparent 20%);
 }
 
 /*--------------------------------------------------------------
@@ -2405,7 +2493,7 @@ section,
 }
 
 .search-widget form button {
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   color: var(--contrast-color);
   position: absolute;
   top: 0;
@@ -2425,11 +2513,11 @@ section,
 }
 
 .search-widget form button:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: color-mix(in srgb, var(--alt-background-color), transparent 20%);
 }
 
 .search-widget form:is(:focus-within) {
-  border-color: var(--accent-color);
+  border-color: var(--alt-background-color);
 }
 
 .categories-widget ul {
@@ -2452,7 +2540,7 @@ section,
 }
 
 .categories-widget ul a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .categories-widget ul a span {
@@ -2487,7 +2575,7 @@ section,
 }
 
 .recent-posts-widget .post-item h4 a:hover {
-  color: var(--accent-color);
+  color: var(--alt-background-color);
 }
 
 .recent-posts-widget .post-item time {
@@ -2522,9 +2610,9 @@ section,
 }
 
 .tags-widget ul a:hover {
-  background: var(--accent-color);
+  background: var(--alt-background-color);
   color: var(--contrast-color);
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--alt-background-color);
 }
 
 .tags-widget ul a span {
